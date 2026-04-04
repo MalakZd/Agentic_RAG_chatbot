@@ -2,9 +2,10 @@ from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
+from langchain.tools import tool
 from langchain.messages import HumanMessage
 from langchain_openai.embeddings import OpenAIEmbeddings
-from langchain_core.tools import create_retriever_tool, tool
+from langchain_core.tools import create_retriever_tool
 
 load_dotenv(override=True)
 
@@ -12,6 +13,7 @@ texts = ["I am Malak Zahid, a second-year engineering student specializing in Da
          "I am a passionate software developer and data analyst with expertise in Python, Java, .NET, React, and Angular, combined with strong database management skills."
          "Through my professional experiences at INWI, I have developed hands-on expertise in Salesforce CRM, IT process management, and most recently, full-stack web development for data-driven applications."
          "I led the development of a centralized web platform for analyzing fiber network data, implementing interactive dashboards, secure data validation, and collaborative multi-user access controls."
+         
 ]
 
 embedding_model = OpenAIEmbeddings()
